@@ -1,5 +1,4 @@
 # A simple ToDo Application in React Native
-<img src="https://github.com/sindrefladvad/React-Native-ToDo-Application/blob/master/ToDoApplication/assets/images/logo_transparent_black.png" width="100"/>
 
 ## Screenshots
 <img src="https://github.com/sindrefladvad/React-Native-ToDo-Application/blob/master/ToDoApplication/assets/images/addtask.png" width="250"/> <img src="https://github.com/sindrefladvad/React-Native-ToDo-Application/blob/master/ToDoApplication/assets/images/taskoverview.png" width="250"/> 
