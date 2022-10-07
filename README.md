@@ -1,10 +1,4 @@
 # A simple ToDo Application in React Native
-
-## Screenshots
-
-
-# Simple React Native weather application that retreives weather information from Openweathermap API
-
 <img src="https://github.com/sindrefladvad/React-Native-ToDo-Application/blob/master/ToDoApplication/assets/images/logo_transparent_black.png" width="100"/>
 
 ## Screenshots
