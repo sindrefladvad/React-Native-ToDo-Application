@@ -25,7 +25,7 @@ function TaskInput(props) {
       <View style={styles.inputContainer}>
         <Image
           style={styles.image}
-          source={require("../assets/images/goal.png")}
+          source={require("../assets/images/logo_transparent.png")}
         />
         <TextInput
           placeholder="Your Task"
@@ -35,12 +35,12 @@ function TaskInput(props) {
         />
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
-            <Button title="Cancel" onPress={props.onCancel} color="#f31282" />
+            <Button title="Cancel" onPress={props.onCancel} color="#D84797" />
           </View>
           <View style={styles.button}>
             <Button
               title="Add Task"
-              color={Platform.OS === "android" ? "#5e0acc" : "#FFFFFF"}
+              color={Platform.OS === "android" ? "#62929E" : "#FFFFFF"}
               onPress={addTaskHandler}
             />
           </View>
@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#311b6b",
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 200,
+    height: 200,
     margin: 20,
   },
   textInput: {

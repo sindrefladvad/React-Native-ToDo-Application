@@ -38,7 +38,7 @@ export default function App() {
         <View style={styles.buttonContainer}>
           <Button
             title="Add New Task"
-            color={Platform.OS === "android" ? "#5e0acc" : "#FFFFFF"}
+            color={Platform.OS === "android" ? "#62929E" : "#FFFFFF"}
             onPress={startAddTaskHandler}
           />
         </View>
