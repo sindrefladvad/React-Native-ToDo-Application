@@ -2,32 +2,32 @@ import { StyleSheet, View, FlatList, Button } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
-import GoalItem from "./components/GoalItem";
-import GoalInput from "./components/GoalInput";
+import TaskItem from "./components/TaskItem";
+import TaskInput from "./components/TaskInput";
 
 export default function App() {
   const [modalIsVisible, setModalIsVisible] = useState(false);
-  const [courseGoals, setCourseGoals] = useState([]);
+  const [courseTasks, setCourseTasks] = useState([]);
 
-  function startAddGoalHandler() {
+  function startAddTaskHandler() {
     setModalIsVisible(true);
   }
 
-  function endAddGoalHandler() {
+  function endAddTaskHandler() {
     setModalIsVisible(false);
   }
 
-  function addGoalHandler(enteredGoalText) {
-    setCourseGoals((currentCourseGoals) => [
-      ...currentCourseGoals,
-      { text: enteredGoalText, id: Math.random().toString() },
+  function addTaskHandler(enteredTaskText) {
+    setCourseTasks((currentCourseTasks) => [
+      ...currentCourseTasks,
+      { text: enteredTaskText, id: Math.random().toString() },
     ]);
-    endAddGoalHandler();
+    endAddTaskHandler();
   }
 
-  function deleteGoalHandler(id) {
-    setCourseGoals((currentCourseGoals) => {
-      return currentCourseGoals.filter((goal) => goal.id !== id);
+  function deleteTaskHandler(id) {
+    setCourseTasks((currentCourseTasks) => {
+      return currentCourseTasks.filter((Task) => Task.id !== id);
     });
   }
 
@@ -35,25 +35,27 @@ export default function App() {
     <>
       <StatusBar style="light" />
       <View style={styles.appContainer}>
-        <Button
-          title="Add New Goal"
-          color="#FFFFFF"
-          onPress={startAddGoalHandler}
-        />
-        <GoalInput
+        <View style={styles.buttonContainer}>
+          <Button
+            title="Add New Task"
+            color={Platform.OS === "android" ? "#5e0acc" : "#FFFFFF"}
+            onPress={startAddTaskHandler}
+          />
+        </View>
+        <TaskInput
           visible={modalIsVisible}
-          onAddGoal={addGoalHandler}
-          onCancel={endAddGoalHandler}
+          onAddTask={addTaskHandler}
+          onCancel={endAddTaskHandler}
         />
-        <View style={styles.goalsContainer}>
+        <View style={styles.TasksContainer}>
           <FlatList
-            data={courseGoals}
+            data={courseTasks}
             renderItem={(itemData) => {
               return (
-                <GoalItem
+                <TaskItem
                   text={itemData.item.text}
                   id={itemData.item.id}
-                  onDeleteItem={deleteGoalHandler}
+                  onDeleteItem={deleteTaskHandler}
                 />
               );
             }}
@@ -74,7 +76,12 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingHorizontal: 16,
   },
-  goalsContainer: {
+  TasksContainer: {
     flex: 5,
+  },
+  buttonContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

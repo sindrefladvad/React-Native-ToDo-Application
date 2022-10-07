@@ -8,16 +8,16 @@ import {
 } from "react-native";
 import { useState } from "react";
 
-function GoalInput(props) {
-  const [enteredGoalText, setEnteredGoalText] = useState("");
+function TaskInput(props) {
+  const [enteredTaskText, setEnteredTaskText] = useState("");
 
-  function goalInputHandler(enteredText) {
-    setEnteredGoalText(enteredText);
+  function TaskInputHandler(enteredText) {
+    setEnteredTaskText(enteredText);
   }
 
-  function addGoalHandler() {
-    props.onAddGoal(enteredGoalText);
-    setEnteredGoalText("");
+  function addTaskHandler() {
+    props.onAddTask(enteredTaskText);
+    setEnteredTaskText("");
   }
 
   return (
@@ -28,10 +28,10 @@ function GoalInput(props) {
           source={require("../assets/images/goal.png")}
         />
         <TextInput
-          placeholder="Your goal"
+          placeholder="Your Task"
           style={styles.textInput}
-          onChangeText={goalInputHandler}
-          value={enteredGoalText}
+          onChangeText={TaskInputHandler}
+          value={enteredTaskText}
         />
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
@@ -39,9 +39,9 @@ function GoalInput(props) {
           </View>
           <View style={styles.button}>
             <Button
-              title="Add Goal"
+              title="Add Task"
               color={Platform.OS === "android" ? "#5e0acc" : "#FFFFFF"}
-              onPress={addGoalHandler}
+              onPress={addTaskHandler}
             />
           </View>
         </View>
@@ -50,7 +50,7 @@ function GoalInput(props) {
   );
 }
 
-export default GoalInput;
+export default TaskInput;
 
 const styles = StyleSheet.create({
   inputContainer: {
