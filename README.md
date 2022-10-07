@@ -1,4 +1,5 @@
-# A simple ToDo Application in React Native
+# ToDo Application
+A Simple React Native ToDo application with possibility to add tasks and removing them after they are finished. The application utilizes scrollview, flatlist, modal and useState. 
 
 ## Screenshots
 <img src="https://github.com/sindrefladvad/React-Native-ToDo-Application/blob/master/ToDoApplication/assets/images/addtask.png" width="250"/> <img src="https://github.com/sindrefladvad/React-Native-ToDo-Application/blob/master/ToDoApplication/assets/images/taskoverview.png" width="250"/> 
